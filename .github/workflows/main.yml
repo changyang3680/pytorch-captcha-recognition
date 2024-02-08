@@ -25,3 +25,8 @@ jobs:
 
       - name: Run captcha_train  # 执行 captcha_train
         run: python captcha_train.py
+      - name: Upload artifact  # 上传工件
+        uses: actions/upload-artifact@v4
+        with:
+          name: executable  # 工件名称
+          path: dist/model.pkl  # 可执行文件路径，这里根据实际情况修改  
