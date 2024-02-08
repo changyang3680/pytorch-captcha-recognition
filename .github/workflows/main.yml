@@ -9,10 +9,10 @@ jobs:
 
     steps:
       - name: Checkout repository  # 检出仓库
-        uses: actions/checkout@v6
+        uses: actions/checkout@v5
       
       - name: Set up Python  # 安装 Python 环境
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v5
         with:
           python-version: '3.9'  # 指定 Python 版本为 3.x
 
