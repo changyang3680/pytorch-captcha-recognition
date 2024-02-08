@@ -1,0 +1,29 @@
+name: Python Environment and Execution
+
+on:
+  push:
+    branches:
+      - main  # 当 main 分支有提交时触发工作流程
+
+jobs:
+  setup_and_run:
+    runs-on: ubuntu-latest  # 在最新的 Ubuntu 环境中运行
+
+    steps:
+      - name: Checkout repository  # 检出仓库
+        uses: actions/checkout@v2
+      
+      - name: Set up Python  # 安装 Python 环境
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.12'  # 指定 Python 版本为 3.x
+
+      - name: Install dependencies  # 安装依赖库
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run captcha_gen  # 执行 captcha_gen
+        run: python captcha_gen.py
+
+      - name: Run captcha_train  # 执行 captcha_train
+        run: python captcha_train.py
