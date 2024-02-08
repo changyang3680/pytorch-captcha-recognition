@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: Checkout repository  # 检出仓库
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
       
       - name: Set up Python  # 安装 Python 环境
         uses: actions/setup-python@v5
